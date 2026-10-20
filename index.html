@@ -7,13 +7,15 @@
     <meta name="description" content="走进桜坂駅的四月午后：一个可以漫游的三渲二樱花车站。" />
     <title>桜坂駅 · 四月的风</title>
     <link rel="icon" type="image/svg+xml" href="/sakura.svg" />
+    <!-- 字体异步加载，外部服务不可用时仍可立即进入场景。 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600&amp;family=Noto+Serif+JP:wght@400;500;600&amp;display=swap" media="print" onload="this.media='all'" />
   </head>
   <body>
     <main id="experience">
       <div id="scene" aria-label="可拖动旋转、滚轮缩放的桜坂駅三维场景"></div>
       <div class="film-grain" aria-hidden="true"></div>
       <header class="masthead">
-        <a class="wordmark" href="/" aria-label="桜坂駅首页">
+        <a class="wordmark" href="%BASE_URL%" aria-label="桜坂駅首页">
           <svg class="sakura-mark" viewBox="0 0 48 48" aria-hidden="true"><g fill="currentColor"><path d="M24 23C9 14 15 1 24 9c9-8 15 5 0 14Z"/><path d="M24 23C9 14 15 1 24 9c9-8 15 5 0 14Z" transform="rotate(72 24 24)"/><path d="M24 23C9 14 15 1 24 9c9-8 15 5 0 14Z" transform="rotate(144 24 24)"/><path d="M24 23C9 14 15 1 24 9c9-8 15 5 0 14Z" transform="rotate(216 24 24)"/><path d="M24 23C9 14 15 1 24 9c9-8 15 5 0 14Z" transform="rotate(288 24 24)"/></g></svg>
           <span>桜坂駅<span class="wordmark-en">SAKURAZAKA STATION</span></span>
         </a>
