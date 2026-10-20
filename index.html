@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#d9e7e4" />
+    <meta name="description" content="走进桜坂駅的四月午后：一个可以漫游的三渲二樱花车站。" />
+    <title>桜坂駅 · 四月的风</title>
+    <link rel="icon" type="image/svg+xml" href="/sakura.svg" />
+  </head>
+  <body>
+    <main id="experience">
+      <div id="scene" aria-label="可拖动旋转、滚轮缩放的桜坂駅三维场景"></div>
+      <div class="film-grain" aria-hidden="true"></div>
+      <header class="masthead">
+        <a class="wordmark" href="/" aria-label="桜坂駅首页">
+          <svg class="sakura-mark" viewBox="0 0 48 48" aria-hidden="true"><g fill="currentColor"><path d="M24 23C9 14 15 1 24 9c9-8 15 5 0 14Z"/><path d="M24 23C9 14 15 1 24 9c9-8 15 5 0 14Z" transform="rotate(72 24 24)"/><path d="M24 23C9 14 15 1 24 9c9-8 15 5 0 14Z" transform="rotate(144 24 24)"/><path d="M24 23C9 14 15 1 24 9c9-8 15 5 0 14Z" transform="rotate(216 24 24)"/><path d="M24 23C9 14 15 1 24 9c9-8 15 5 0 14Z" transform="rotate(288 24 24)"/></g></svg>
+          <span>桜坂駅<span class="wordmark-en">SAKURAZAKA STATION</span></span>
+        </a>
+        <button id="weather-button" class="weather" aria-expanded="false" aria-controls="environment-panel" title="改变天气与时间"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4 4l2 2m12 12 2 2M4 20l2-2M18 6l2-2"/></svg><span><span id="weather-name">晴れ</span> <b id="temperature">22°</b></span><i></i><time>4月 · <span id="period-label">午后</span> <span id="time-label">16:20</span></time></button>
+      </header>
+      <section id="environment-panel" hidden aria-label="天气与昼夜设置">
+        <div class="environment-heading"><span>小镇的天空</span><button id="environment-close" aria-label="关闭天气与时间设置">×</button></div>
+        <div class="weather-options" role="group" aria-label="选择天气"><button data-weather="clear" class="selected" aria-pressed="true">晴天</button><button data-weather="cloudy" aria-pressed="false">薄云</button><button data-weather="rain" aria-pressed="false">春雨</button></div>
+        <div class="time-heading"><label for="time-slider">时刻</label><output id="environment-time" for="time-slider">16:20</output></div>
+        <input id="time-slider" type="range" min="0" max="1439" step="1" value="980" aria-label="小镇时间" aria-valuetext="16:20" />
+        <div class="time-presets" role="group" aria-label="时间片刻"><button data-hour="6.5">清晨</button><button data-hour="12">正午</button><button data-hour="18">黄昏</button><button data-hour="22">夜晚</button></div>
+        <button id="cycle-button" aria-pressed="false">让时间流动</button>
+        <p>风会带走落樱，雨会慢慢留下水光。</p>
+      </section>
+      <aside class="scene-caption">
+        <div class="chapter"><span></span> 小镇漫游 / 春日篇</div>
+        <h1>四月的风，<br/>在这里停了一站。</h1>
+        <p>买一瓶汽水，让春天慢一点。</p>
+        <div class="caption-coordinate">桜坂 · さくらざか <span>架空の町 · 四月の午後</span></div>
+      </aside>
+      <div class="view-rail" aria-label="选择观察位置">
+        <button class="view-button active" data-view="street" aria-label="站前街道视角" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m8 3-4 18m12-18 4 18M12 3v3m0 4v3m0 4v4"/></svg><span>站前街道</span></button>
+        <button class="view-button" data-view="station" aria-label="樱花站台视角" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="5" y="3" width="14" height="15" rx="3"/><path d="M5 11h14M9 6h6M7 21l2-3m8 3-2-3"/><circle cx="8.5" cy="14.5" r=".8"/><circle cx="15.5" cy="14.5" r=".8"/></svg><span>樱花站台</span></button>
+        <button class="view-button" data-view="crossing" aria-label="铁路道口视角" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M7 3h10M7 21h10M9 3v18m6-18v18M9 7h6M9 12h6M9 17h6"/></svg><span>铁路道口</span></button>
+        <button class="view-button" data-view="shops" aria-label="街角店铺视角" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 8h12v7a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5ZM17 9h2a3 3 0 0 1 0 6h-2M3 21h17M8 3v2m4-3v3m4-2v2"/></svg><span>街角店铺</span></button>
+        <button class="view-button" data-view="daily" aria-label="巷口杂货视角" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 10v11h16V10M3 10l2-6h14l2 6M3 10a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0M9 21v-7h6v7"/></svg><span>巷口杂货</span></button>
+        <button class="view-button" data-view="counter" aria-label="站内售票视角" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 5h18v14H3ZM3 12h18M8 5v7M16 5v7M7 16h4m3 0h3"/></svg><span>站内售票</span></button>
+        <button class="view-button" data-view="tower" aria-label="观光塔视角" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M10 4h4l2 16H8ZM6 9h12v4H6ZM4 21h16M12 2v2M9 17h6M8 20l8-7M16 20l-8-7"/></svg><span>桜坂观光塔</span></button>
+        <button class="view-button" data-view="ponds" aria-label="鱼塘水面视角" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 12c4-7 11-7 15 0-4 7-11 7-15 0Zm0 0L2 8v8ZM9 7l2-3 3 2M9 17l2 3 3-2M3 22h18"/><circle cx="16" cy="11" r=".8"/></svg><span>水边鱼塘</span></button>
+        <button class="view-button" data-view="lake" aria-label="湖畔码头视角" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 17c3-3 5 3 8 0s5 3 8 0 3 0 4 0M2 21c3-3 5 3 8 0s5 3 8 0 3 0 4 0M7 13l5-9 5 9ZM12 4v12"/></svg><span>湖畔散步</span></button>
+      </div>
+      <div id="walk-help" role="status" aria-live="polite">
+        <span class="walk-label">在小镇里，走一会儿。</span>
+        <p id="walk-instructions">WASD / 方向键移动 · 鼠标环顾 · Shift 快走 · Esc 释放鼠标</p>
+      </div>
+      <div id="walk-reticle" aria-hidden="true"></div>
+      <button id="interact-button" hidden><kbd>E</kbd><span id="interact-label">观察</span><span class="interact-touch">轻触互动</span></button>
+      <div id="ride-status" hidden role="status" aria-live="polite"></div>
+      <div id="water-status" hidden role="status" aria-live="polite"></div>
+      <section id="fishing-status" hidden aria-label="钓鱼状态">
+        <div class="fishing-heading"><span id="fishing-phase">湖畔垂钓</span><span id="fishing-count">钓获 0</span></div>
+        <p id="fishing-hint" role="status" aria-live="polite">看看浮漂，等一阵风。</p>
+        <div id="fishing-meters" hidden>
+          <div class="fishing-meter-row"><span>收线</span><div class="fishing-meter"><i id="fishing-progress"></i></div></div>
+          <div class="fishing-meter-row"><span>张力</span><div class="fishing-meter fishing-tension"><i id="fishing-tension"></i></div></div>
+        </div>
+        <div class="fishing-actions"><button id="fishing-reel" type="button">收竿</button><button id="fishing-cancel" type="button">结束垂钓</button></div>
+      </section>
+      <dialog id="inspection" aria-labelledby="inspection-title">
+        <span class="inspection-kicker">桜坂 · 午后记事</span>
+        <h2 id="inspection-title"></h2>
+        <p id="inspection-text"></p>
+        <button id="inspection-close" type="button">继续散步 <span aria-hidden="true">↗</span></button>
+      </dialog>
+      <div id="walk-pad" role="group" aria-label="拖动摇杆移动，松开停止">
+        <div id="walk-stick" aria-hidden="true"></div>
+      </div>
+      <div id="water-controls" role="group" aria-label="跳跃与游泳">
+        <button id="jump-button" type="button" aria-label="跳跃或在水中上浮"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m6 12 6-7 6 7M12 5v14"/></svg><span>跳跃 / 上浮</span></button>
+        <button id="dive-button" type="button" aria-label="在水中下潜"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m6 12 6 7 6-7M12 5v14"/></svg><span>下潜</span></button>
+      </div>
+      <footer class="scene-footer">
+        <div class="location-note"><span class="live-dot"></span><span id="scene-note">慢一点，听听春天。</span></div>
+        <div class="toolbar" role="group" aria-label="场景控制">
+          <button id="walk-button" class="control-button" aria-pressed="false" title="进入第一人称漫步"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12.9" cy="4.1" r="1.8"/><path d="m9.4 10 2.6-3 3 1.7 2.3 3.4M11.8 7.6l-1.6 6.1-3.5 6.6m3.5-6.6 4 3 1.4 4M9.4 10l-2.9 2"/></svg><span>漫步</span></button>
+          <button id="petals-button" class="control-button is-on" aria-pressed="true" title="切换飘落樱花"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 11C4 6 7 1 12 5c5-4 8 1 0 6Zm0 0c7-5 12 0 6 3 3 6-4 8-6-3Zm0 0c1 8-6 11-7 5-7 0-6-7 7-5Z"/><path d="m12 12 1 9"/></svg><span>落樱</span></button>
+          <button id="sound-button" class="control-button" aria-pressed="false" title="切换春日环境声音"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 9h4l5-4v14l-5-4H4Z"/><path d="M17 8c2 2 2 6 0 8m3-11c4 4 4 10 0 14"/></svg><span>环境音</span></button>
+          <span class="toolbar-divider"></span>
+          <button id="train-button" class="control-button" aria-pressed="false" title="让电车出发"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m9 5 10 7-10 7Z"/></svg><span>电车出发</span></button>
+          <button id="photo-button" class="control-button icon-only" title="保存当前画面" aria-label="保存当前画面"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h4l2-3h6l2 3h4v13H3Z"/><circle cx="12" cy="13" r="4"/></svg></button>
+          <button id="reset-button" class="control-button icon-only" title="恢复初始视角" aria-label="恢复初始视角"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 10a8 8 0 1 1 1 8M4 4v6h6"/></svg></button>
+        </div>
+        <div class="gesture-hint"><svg viewBox="0 0 20 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="4" y="2" width="12" height="19" rx="6"/><path d="M10 5v5"/></svg>拖动探索 <span>·</span> 滚轮靠近</div>
+      </footer>
+      <div id="toast" role="status" aria-live="polite"></div>
+      <div id="loading"><svg class="loading-flower" viewBox="0 0 48 48"><g fill="#cc7892"><ellipse cx="24" cy="14" rx="6" ry="11"/><ellipse cx="24" cy="14" rx="6" ry="11" transform="rotate(72 24 24)"/><ellipse cx="24" cy="14" rx="6" ry="11" transform="rotate(144 24 24)"/><ellipse cx="24" cy="14" rx="6" ry="11" transform="rotate(216 24 24)"/><ellipse cx="24" cy="14" rx="6" ry="11" transform="rotate(288 24 24)"/></g></svg><p>春天正在进站</p><span>正在描绘桜坂的午后…</span></div>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "sakurazaka-station",
+  "version": "1.0.0",
+  "description": "可第一人称漫游、游泳潜水与垂钓的 Three.js 三渲二樱花小镇",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/08102317cdw-art/sakurazaka-station.git"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "three": "^0.186.1",
+    "vite": "^8.3.4"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.0"
+  }
+}

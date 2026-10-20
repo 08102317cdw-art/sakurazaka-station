@@ -1,0 +1,30 @@
+name: 构建与物理验证
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: 测试与生产构建
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: 获取源码
+        uses: actions/checkout@v4
+      - name: 准备 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - name: 安装依赖
+        run: npm ci
+      - name: 验证物理与交互
+        run: npm test
+      - name: 构建生产版本
+        run: npm run build
